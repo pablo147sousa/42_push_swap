@@ -6,13 +6,13 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 15:36:22 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/20 16:24:41 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/20 17:02:54 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int *ft_parse_str(char const *av[])
+static int	*ft_parse_str(char const *av[])
 {
 	char **matrix;
 	int *array;
@@ -34,7 +34,7 @@ int *ft_parse_str(char const *av[])
 	return (array);
 }
 
-int *ft_parse_args(int ac, char const *av[])
+static int	*ft_parse_args(int ac, char const *av[])
 {
 	int	*array;
 	int	i;
@@ -51,6 +51,8 @@ int *ft_parse_args(int ac, char const *av[])
 	}
 	return (array);
 }
+
+
 
 int	*ft_valid(int ac, char const *av[])
 {
