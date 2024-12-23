@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 10:52:59 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/15 16:57:23 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/23 12:52:43 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,16 +59,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	output[i] = 0;
 	return (output);
 }
-/*
-int	main(void)
-{
-	char	*result;
-
-	// Test case 6: NULL input
-	result = ft_strtrim(NULL, " ");
-	printf("Test 6: %s\n", result ? result : "NULL");
-	free(result);
-
-	return (0);
-}
-*/

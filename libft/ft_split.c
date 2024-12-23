@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:38:44 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/15 14:20:53 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/23 12:42:08 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,21 +93,3 @@ char	**ft_split(char const *s, char c)
 	matrix[index] = 0;
 	return (matrix);
 }
-/* 
-int	main()
-{
-	int		i;
-	char	**matrix;
-
-	matrix = ft_split("     ", ' ');
-	i = *matrix[0] == '\0';
-	printf("%d", i);
-	// while (matrix[i] != 0)
-	// {
-	// 	printf("[%d]:%s\n", i, matrix[i]);
-	// 	i++;
-	// }
-	ft_free(matrix,i);
-	return (0);
-}
- */

@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 17:08:25 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/15 17:08:28 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/23 12:44:01 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,3 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (size);
 }
-/* 
-int main()
-{
-	t_list *l = NULL;
-	printf("%d\n",ft_lstsize(l));
-	ft_lstadd_front(&l, ft_lstnew((void *)1));
-	printf("%d\n",ft_lstsize(l));
-	ft_lstadd_front(&l, ft_lstnew((void *)2));
-	printf("%d\n",ft_lstsize(l));
-	return (0);
-}
- */

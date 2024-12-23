@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 14:31:27 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/07 16:07:07 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/23 12:43:08 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,3 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
-/*
-int	main()
-{
-	char	*str;
-
-	str = ft_itoa(-999);
-	printf("Result:%s", str);
-	return (0);
-}
-*/

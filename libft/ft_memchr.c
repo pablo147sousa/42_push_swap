@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 12:34:40 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/04 11:39:00 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/23 12:44:09 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (0);
 }
-
-/*
-#include <string.h>
-
-int main()
-{
-	char	src[10] = "testead";
-	char	letter;
-	//int		size;
-
-	letter = 's';
-	//size = sizeof(src) / sizeof(char);
-	printf ("Result: %s\n",(char *) ft_memchr(src, letter, 3));
-	//size = sizeof(src) / sizeof(char);
-	printf ("Expected: %s\n",(char *) memchr(src, letter, 3));
-	return 0;
-}
-*/

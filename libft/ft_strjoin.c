@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 09:55:04 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/04 10:48:45 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/23 12:52:25 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcat(&join[ft_strlen(s1)], s2, ft_strlen(s2) + 1);
 	return (join);
 }
-/*
-int main(void)
-{
-	char *s = ft_strjoin("tripouille", "42");
-
-	printf("Result: %s", s);
-	return (0);
-}
-*/
