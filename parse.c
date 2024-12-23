@@ -6,11 +6,31 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 15:36:22 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/20 17:02:54 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/23 14:15:26 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static int ft_input(const char *str)
+{
+	const char	*temp;
+	long		i;
+
+	temp = str;
+	if (*str == '+' || *str == '-')
+		str++;
+	while (*str)
+	{
+		if (!ft_isdigit(*str))
+			return (0);
+		str++;
+	}
+	i = ft_atoi(temp);
+	if (i < INT_MIN || i > INT_MAX)
+		return (0);
+	return (1);
+}
 
 static int	*ft_parse_str(char const *av[])
 {
@@ -22,11 +42,16 @@ static int	*ft_parse_str(char const *av[])
 	matrix = ft_split(av[1], 32);
 	if (!matrix)
 		return (0);
-	array = (int *)malloc((sizeof(matrix) / sizeof(char *)) * sizeof(int));
+	while (matrix[i])
+		i++;
+	array = malloc(i * sizeof(int));
 	if (!array)
 		return (0);
+	i = 0;
 	while (*matrix)
 	{
+		if (!ft_input(*matrix))
+			return (0);
 		array[i] = ft_atoi(*matrix);
 		matrix++;
 		i++;
@@ -45,14 +70,14 @@ static int	*ft_parse_args(int ac, char const *av[])
 	i = 0;
 	while (*av)
 	{
+		if (!ft_input(*av))
+			return (0);
 		array[i] = ft_atoi(*av);
 		i++;
 		av++;
 	}
 	return (array);
 }
-
-
 
 int	*ft_valid(int ac, char const *av[])
 {
