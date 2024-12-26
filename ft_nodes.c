@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:47:04 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/26 15:25:07 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/26 16:28:11 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ t_stack	*ft_fill_stk(int *src)
 		ft_add_front(stk, ft_newnode(*temp));
 		temp++;
 	}
-	free(src);
-	return (stk);
+	stk->head->prev = stk->tail;
+	stk->tail->next = stk->head;
+	return (free(src), stk);
 }

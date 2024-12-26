@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:08:45 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/26 15:25:34 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/26 16:24:58 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,8 @@ int	main(int argc, char const *argv[])
 		temp = temp->next;
 	}
 	ft_printf("%d\n", temp->content);
-	return (0);
+	ft_printf("1-----\n");
+	ft_printf("%d\n", stk->tail->next->content);
+	ft_printf("2-----\n");
+	ft_printf("%d\n", stk->head->prev->content);
 }
