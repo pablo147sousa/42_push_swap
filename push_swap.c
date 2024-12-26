@@ -6,10 +6,9 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:08:45 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/20 16:40:19 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/26 14:01:27 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push_swap.h"
 #include <stdio.h>
@@ -21,15 +20,23 @@ void	ft_push_swap()
 
 int	main(int argc, char const *argv[])
 {
-	int	*out;
+	t_stacks	*stk;
+	int			*out;
+	t_node		*temp;
 
+	stk = NULL;
 	out = ft_valid(argc, argv);
 	if (!out)
 		return (-1);
-	while (*out)
+	stk = ft_fill_stk(out);
+	if (!stk)
+		return (-1);
+	temp = stk->head;
+	while (temp != stk->tail)
 	{
-		ft_printf("%d\n", *out);
-		out++;
+		ft_printf("%d\n", temp->content);
+		temp = temp->next;
 	}
+	ft_printf("%d\n", temp->content);
 	return (0);
 }

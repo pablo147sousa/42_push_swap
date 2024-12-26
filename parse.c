@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 15:36:22 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/23 14:15:26 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/26 14:01:02 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static int	*ft_parse_args(int ac, char const *av[])
 	int	*array;
 	int	i;
 
-	array = malloc((ac - 1) * sizeof(int));
+	array = malloc(ac * sizeof(int));
 	if(!array)
 		return (0);
 	i = 0;
@@ -76,6 +76,7 @@ static int	*ft_parse_args(int ac, char const *av[])
 		i++;
 		av++;
 	}
+	array[i] = 0;
 	return (array);
 }
 
@@ -86,4 +87,3 @@ int	*ft_valid(int ac, char const *av[])
 	else
 		return (ft_parse_args(ac, &av[1]));
 }
-
