@@ -1,44 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   cleaners.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/19 16:08:45 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/26 15:10:58 by pmoreira         ###   ########.fr       */
+/*   Created: 2024/12/26 14:39:32 by pmoreira          #+#    #+#             */
+/*   Updated: 2024/12/26 15:09:00 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-/* void	ft_push_swap()
+void	ft_clean_matrix(char **matrix)
 {
-	
-} */
+	int	i;
 
-int	main(int argc, char const *argv[])
-{
-	t_stacks	*stk;
-	int			*out;
-	t_node		*temp;
-
-	if (argc <= 1)
-		return (-1);
-	stk = NULL;
-	out = ft_valid(argc, argv);
-	if (!out)
-		return (-1);
-	stk = ft_fill_stk(out);
-	if (!stk)
-		return (-1);
-	temp = stk->head;
-	while (temp != stk->tail)
+	i = 0;
+	while (matrix[i])
 	{
-		ft_printf("%d\n", temp->content);
-		temp = temp->next;
+		free(matrix[i]);
+		i++;
 	}
-	ft_printf("%d\n", temp->content);
-	return (0);
+	free(matrix);
 }

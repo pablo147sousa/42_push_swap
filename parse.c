@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 15:36:22 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/26 14:33:50 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/26 15:06:23 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,15 @@ static int	*ft_parse_str(char const *av[])
 	if (!array)
 		return (0);
 	i = 0;
-	while (*matrix)
+	while (matrix[i])
 	{
-		if (!ft_input(*matrix))
+		if (!ft_input(matrix[i]))
 			return (0);
-		array[i] = ft_atoi(*matrix);
-		matrix++;
+		array[i] = ft_atoi(matrix[i]);
 		i++;
 	}
 	array[i] = 0;
+	ft_clean_matrix(matrix);
 	return (array);
 }
 
@@ -81,7 +81,7 @@ static int	*ft_parse_args(int ac, char const *av[])
 	return (array);
 }
 
-int	ft_invalid(int *args)
+static int	ft_invalid(int *args)
 {
 	int	j;
 	int	i;
@@ -93,7 +93,7 @@ int	ft_invalid(int *args)
 		while (args[j])
 		{
 			if (args[i] == args[j])
-				return (free(args), 1);
+				return (1);
 			j++;
 		}
 		i++;
@@ -111,6 +111,6 @@ int	*ft_valid(int ac, char const *av[])
 	else
 		array = ft_parse_args(ac, &av[1]);
 	if (ft_invalid(array))
-		return (NULL);
+		return (free(array), NULL);
 	return (array);
 }

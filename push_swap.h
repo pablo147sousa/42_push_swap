@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:41:36 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/26 14:00:57 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/26 15:06:52 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ t_node		*ft_newnode(int content);
 void		ft_add_front(t_stacks *stack, t_node *new);
 t_stacks	*ft_init_stk(t_node *node);
 t_stacks	*ft_fill_stk(int *src);
+void		ft_clean_matrix(char **matrix);
 
 #endif
