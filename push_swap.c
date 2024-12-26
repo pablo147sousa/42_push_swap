@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:08:45 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/26 14:01:27 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/26 14:24:34 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	main(int argc, char const *argv[])
 	int			*out;
 	t_node		*temp;
 
+	if (argc <= 1)
+		return (-1);
 	stk = NULL;
 	out = ft_valid(argc, argv);
 	if (!out)
