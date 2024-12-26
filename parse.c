@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 15:36:22 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/26 14:01:02 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/26 14:06:30 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	*ft_parse_str(char const *av[])
 		return (0);
 	while (matrix[i])
 		i++;
-	array = malloc(i * sizeof(int));
+	array = malloc((i + 1) * sizeof(int));
 	if (!array)
 		return (0);
 	i = 0;
@@ -56,6 +56,7 @@ static int	*ft_parse_str(char const *av[])
 		matrix++;
 		i++;
 	}
+	array[i] = 0;
 	return (array);
 }
 
