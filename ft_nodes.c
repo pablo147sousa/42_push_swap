@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:47:04 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/26 14:00:17 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/26 15:25:07 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_node	*ft_newnode(int content)
 	return (node);
 }
 
-void	ft_add_front(t_stacks *stack, t_node *new)
+void	ft_add_front(t_stack *stack, t_node *new)
 {
 	if (!stack->head)
 	{
@@ -40,13 +40,13 @@ void	ft_add_front(t_stacks *stack, t_node *new)
 	}
 }
 
-t_stacks	*ft_fill_stk(int *src)
+t_stack	*ft_fill_stk(int *src)
 {
-	t_stacks	*stk;
+	t_stack		*stk;
 	int			*temp;
 
 	temp = src;
-	stk = malloc(sizeof(t_stacks));
+	stk = malloc(sizeof(t_stack));
 	if (!stk)
 		return (NULL);
 	stk->head = NULL;

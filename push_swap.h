@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:41:36 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/26 15:06:52 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/26 15:24:15 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,25 @@ typedef struct s_node
 	struct s_node	*prev;
 }	t_node;
 
-typedef struct s_stacks
+typedef struct s_stack
 {
 	t_node	*head;
 	t_node	*tail;
-}	t_stacks;
+}	t_stack;
 
 int			*ft_valid(int ac, char const *av[]);
 t_node		*ft_newnode(int content);
-void		ft_add_front(t_stacks *stack, t_node *new);
-t_stacks	*ft_init_stk(t_node *node);
-t_stacks	*ft_fill_stk(int *src);
+void		ft_add_front(t_stack *stack, t_node *new);
+t_stack		*ft_init_stk(t_node *node);
+t_stack		*ft_fill_stk(int *src);
+
+// CLEANERS
+
 void		ft_clean_matrix(char **matrix);
+
+// MOVES
+
+void		swap_a(t_stack *stk);
+void		swap_b(t_stack *stk);
 
 #endif

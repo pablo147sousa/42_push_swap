@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 15:36:22 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/26 15:06:23 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/26 15:25:52 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ static int ft_input(const char *str)
 
 static int	*ft_parse_str(char const *av[])
 {
-	char **matrix;
-	int *array;
-	int i;
+	char	**matrix;
+	int		*array;
+	int		i;
 
 	i = 0;
 	matrix = ft_split(av[1], 32);

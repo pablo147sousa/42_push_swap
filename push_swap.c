@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:08:45 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/26 15:10:58 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/26 15:25:34 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 int	main(int argc, char const *argv[])
 {
-	t_stacks	*stk;
+	t_stack		*stk;
 	int			*out;
 	t_node		*temp;
 
