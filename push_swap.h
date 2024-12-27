@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:41:36 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/27 12:40:01 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/27 14:56:31 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,11 @@ void		swap_a(t_stack *stk);
 void		swap_b(t_stack *stk);
 void		push_a(t_stack *dst, t_stack *src);
 void		push_b(t_stack *dst, t_stack *src);
+void		rot_a(t_stack *stk, int way);
+void		rot_b(t_stack *stk, int way);
+void		rot_r(t_stack *stk_a, t_stack *stk_b, int way);
 
-// HELPERS
+	// HELPERS
 
 long		ft_atol(const char *nptr);
 int			ft_verify(int *array, char *str);
@@ -55,5 +58,6 @@ int			ft_verify(int *array, char *str);
 // TESTERS
 
 void		push_test(t_stack *a, t_stack *b);
+void		rotate_test(t_stack *stk);
 
 #endif

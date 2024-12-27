@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 12:36:47 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/27 13:02:40 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/27 14:55:44 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,31 @@ void	push_test(t_stack *a, t_stack *b)
 		ft_printf("head prev:%d\n", a->head->prev->content);
 	if (a->tail->next)
 		ft_printf("tail next:%d\n", a->tail->next->content);
+}
+
+void	rotate_test(t_stack *a)
+{
+	t_node *temp;
+
+	temp = a->head;
+	ft_printf("----STACK----\n");
+	while (temp != a->tail)
+	{
+		ft_printf("%d\n", temp->content);
+		temp = temp->next;
+	}
+	ft_printf("%d\n", temp->content);
+	ft_printf("----MOVES----\n");
+	rot_a(a, -1);
+	rot_a(a, 1);
+	rot_a(a, 1);
+	rot_a(a, -1);
+	temp = a->head;
+	ft_printf("----STACK----\n");
+	while (temp != a->tail)
+	{
+		ft_printf("%d\n", temp->content);
+		temp = temp->next;
+	}
+	ft_printf("%d\n", temp->content);
 }

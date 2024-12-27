@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:18:33 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/27 14:05:32 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/27 14:21:48 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ static void	push(t_stack *dst, t_stack *src)
 {
 	t_node	*temp;
 
-	if (!src || !src->head)
-		return ;
 	temp = src->head;
 	if (temp == src->tail)
 	{
@@ -54,12 +52,16 @@ static void	push(t_stack *dst, t_stack *src)
 
 void	push_b(t_stack *dst, t_stack *src)
 {
+	if (!src || !src->head)
+		return ;
 	push(dst, src);
 	ft_printf("pb\n");
 }
 
 void	push_a(t_stack *dst, t_stack *src)
 {
+	if (!src || !src->head)
+		return ;
 	push(dst, src);
 	ft_printf("pa\n");
 }

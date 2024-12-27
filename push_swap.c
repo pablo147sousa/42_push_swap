@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:08:45 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/27 12:39:39 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/27 14:26:32 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ int	main(int argc, char const *argv[])
 	a = ft_fill_stk(out);
 	if (!a)
 		return (-1);
-	push_test(a, b);
+	//push_test(a, b);
+	rotate_test(a);
+	return (0);
 }
