@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:41:36 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/27 14:56:31 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/27 15:36:26 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ t_stack		*ft_fill_stk(int *src);
 // CLEANERS
 
 void		ft_clean_matrix(char **matrix);
+void		ft_clean_stack(t_stack *stk);
 
 // MOVES
 
