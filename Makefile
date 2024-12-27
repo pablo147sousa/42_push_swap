@@ -5,7 +5,8 @@ CC_FLAGS = -Wall -Werror -Wextra -g
 
 RM = rm -rf
 
-C_SOURCE = push_swap.c parse.c ft_nodes.c cleaners.c swap.c
+C_SOURCE = push_swap.c parse.c ft_nodes.c cleaners.c swap.c \
+helpers.c
 H_SOURCE = push_swap.h
 
 OBJ = $(C_SOURCE:.c=.o)

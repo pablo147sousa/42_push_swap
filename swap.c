@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 15:29:14 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/26 16:05:46 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/27 11:08:22 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	swap_b(t_stack *stk)
 	ft_printf("sb\n");
 }
 
-void swap_ss(t_stack *stk_a, t_stack *stk_b)
+void	swap_ss(t_stack *stk_a, t_stack *stk_b)
 {
 	swap(stk_a);
 	swap(stk_b);

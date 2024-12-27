@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:41:36 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/26 15:24:15 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/27 11:07:17 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,8 @@ void		ft_clean_matrix(char **matrix);
 
 void		swap_a(t_stack *stk);
 void		swap_b(t_stack *stk);
+
+long		ft_atol(const char *nptr);
+int			ft_verify(int *array, char *str);
 
 #endif
