@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 09:53:50 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/27 11:06:09 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/30 10:15:02 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,10 @@ int	ft_verify(int *array, char *str)
 		return (0);
 	*array = (int) nbr;
 	return (1);
+}
+
+void	ft_error(int *array)
+{
+	free(array);
+	write(2,"Error\n", 7);
 }

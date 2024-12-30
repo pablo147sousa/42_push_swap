@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 15:36:22 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/27 11:08:01 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/30 10:20:53 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,6 @@ int	*ft_valid(int ac, char const *av[])
 	else
 		array = ft_parse_args(ac, &av[1]);
 	if (ft_invalid(array))
-		return (free(array), NULL);
+		return (ft_error(array), NULL);
 	return (array);
 }

@@ -6,20 +6,20 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:47:04 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/26 16:28:11 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/30 10:05:08 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*ft_newnode(int content)
+t_node	*ft_newnode(int value)
 {
 	t_node	*node;
 
 	node = malloc(sizeof(t_node));
 	if (!node)
 		return (NULL);
-	node->content = content;
+	node->value = value;
 	node->next = NULL;
 	node->prev = NULL;
 	return (node);

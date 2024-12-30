@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 17:07:30 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/15 17:07:33 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/30 10:05:08 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	temp = lst;
 	while (temp->next != 0)
 	{
-		f(temp->content);
+		f(temp->value);
 		temp = temp->next;
 	}
-	f(temp->content);
+	f(temp->value);
 }

@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 17:06:54 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/15 17:07:40 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/30 10:05:08 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	output = NULL;
 	while (lst)
 	{
-		temp = ft_lstnew(f(lst->content));
+		temp = ft_lstnew(f(lst->value));
 		if (temp == 0)
 		{
 			ft_lstclear(&output, del);
