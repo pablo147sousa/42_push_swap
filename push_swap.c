@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:08:45 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/30 10:25:05 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/12/30 14:04:27 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ void	ft_push_swap(t_stack *a)
 	b = malloc(sizeof(t_stack));
 	b->head = NULL;
 	b->tail = NULL;
-	push_test(a, b);
+	b->size = 0;
+	// push_test(a, b);
+	// rotate_test(a);
+	sort_3(a);
 	ft_clean_stack(b);
 }
 
@@ -28,6 +31,7 @@ int	main(int argc, char const *argv[])
 {
 	t_stack		*a;
 	int			*out;
+	int			i;
 
 	if (argc <= 1)
 		return (0);
@@ -35,11 +39,15 @@ int	main(int argc, char const *argv[])
 	out = ft_valid(argc, argv);
 	if (!out)
 		return (-1);
-	a = ft_fill_stk(out);
+	i = 0;
+	while (out[i])
+		i++;
+	a = ft_fill_stk(out, i);
 	if (!a)
 		return (-1);
-	// rotate_test(a);
-	ft_push_swap(a);
+	rotate_test(a);
+	// ft_printf("size: %d\n",a->size);
+	// ft_push_swap(a);
 	ft_clean_stack(a);
 	return (0);
 }
