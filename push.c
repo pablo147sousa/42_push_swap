@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   ft_push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -29,7 +29,7 @@ static void	ft_link(t_node *node, t_stack *stk)
 	}
 }
 
-static void	push(t_stack *dst, t_stack *src)
+static void	ft_push(t_stack *dst, t_stack *src)
 {
 	t_node	*temp;
 
@@ -50,18 +50,10 @@ static void	push(t_stack *dst, t_stack *src)
 	ft_link(temp, dst);
 }
 
-void	push_b(t_stack *dst, t_stack *src)
+void	push(t_stack *dst, t_stack *src, char target)
 {
 	if (!src || !src->head)
 		return ;
-	push(dst, src);
-	ft_printf("pb\n");
-}
-
-void	push_a(t_stack *dst, t_stack *src)
-{
-	if (!src || !src->head)
-		return ;
-	push(dst, src);
-	ft_printf("pa\n");
+	ft_push(dst, src);
+	ft_printf("p%c\n", target);
 }

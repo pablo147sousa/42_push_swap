@@ -6,13 +6,13 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 15:29:14 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/27 14:23:05 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/03 13:32:15 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	swap(t_stack *stk)
+static void	ft_swap(t_stack *stk)
 {
 	t_node	*temp;
 	t_node	*new_head;
@@ -30,20 +30,12 @@ static void	swap(t_stack *stk)
 	stk->head = new_head;
 }
 
-void	swap_a(t_stack *stk)
+void	swap(t_stack *stk, char target)
 {
 	if (!stk || !stk->head || !stk->head->next)
 		return ;
-	swap(stk);
-	ft_printf("sa\n");
-}
-
-void	swap_b(t_stack *stk)
-{
-	if (!stk || !stk->head || !stk->head->next)
-		return ;
-	swap(stk);
-	ft_printf("sb\n");
+	ft_swap(stk);
+	ft_printf("s%c\n", target);
 }
 
 void	swap_ss(t_stack *stk_a, t_stack *stk_b)
@@ -52,7 +44,7 @@ void	swap_ss(t_stack *stk_a, t_stack *stk_b)
 		return ;
 	if (!stk_b || !stk_b->head || !stk_b->head->next)
 		return ;
-	swap(stk_a);
-	swap(stk_b);
+	ft_swap(stk_a);
+	ft_swap(stk_b);
 	ft_printf("ss\n");
 }

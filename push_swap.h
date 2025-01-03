@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:41:36 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/30 13:52:57 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/03 13:37:17 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 typedef struct s_node
 {
 	int				value;
+	size_t			moves;
 	struct s_node	*next;
 	struct s_node	*prev;
 }	t_node;
@@ -45,10 +46,9 @@ void		ft_clean_stack(t_stack *stk);
 
 // MOVES
 
-void		swap_a(t_stack *stk);
-void		swap_b(t_stack *stk);
-void		push_a(t_stack *dst, t_stack *src);
-void		push_b(t_stack *dst, t_stack *src);
+void		swap(t_stack *stk, char target);
+void		swap_ss(t_stack *stk_a, t_stack *stk_b);
+void		push(t_stack *dst, t_stack *src, char target);
 void		rot_a(t_stack *stk, int way);
 void		rot_b(t_stack *stk, int way);
 void		rot_r(t_stack *stk_a, t_stack *stk_b, int way);
@@ -66,6 +66,6 @@ void		rotate_test(t_stack *stk);
 
 // SORTING
 
-void		sort_3(t_stack *stk);
+void		sort_3(t_stack *s, char target);
 
 #endif
