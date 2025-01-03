@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:41:36 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/03 13:48:05 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/03 15:37:16 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,9 @@ void		rotate_test(t_stack *stk);
 // SORTING
 
 void		sort_3(t_stack *s, char target);
+void		sort(t_stack *a, t_stack *b);
+void		sort_2(t_stack *s, char target);
+void		sort_5(t_stack *a, t_stack *b)
+
 
 #endif
