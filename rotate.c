@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 14:14:30 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/27 15:48:24 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/03 13:47:38 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,26 +26,15 @@ static void	rotate(t_stack *stk, int way)
 	}
 }
 
-void	rot_a(t_stack *stk, int way)
+void	rot(t_stack *stk, int way, char target)
 {
 	if (!stk || !stk->head || !stk->head->next)
 		return ;
 	rotate(stk, way);
 	if (way < 0)
-		ft_printf("rra\n");
+		ft_printf("rr%c\n", target);
 	else
-		ft_printf("ra\n");
-}
-
-void	rot_b(t_stack *stk, int way)
-{
-	if (!stk || !stk->head || !stk->head->next)
-		return ;
-	rotate(stk, way);
-	if (way < 0)
-		ft_printf("rrb\n");
-	else
-		ft_printf("rb\n");
+		ft_printf("r%c\n", target);
 }
 
 void	rot_r(t_stack *stk_a, t_stack *stk_b, int way)
