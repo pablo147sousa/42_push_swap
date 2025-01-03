@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-static void	ft_link(t_node *node, t_stack *stk)
+static int	ft_link(t_node *node, t_stack *stk)
 {
 	if (!stk)
-		return ;
+		return (0);
 	ft_add_front(stk, node);
 	if (stk->tail && stk->tail != node)
 	{
@@ -27,6 +27,8 @@ static void	ft_link(t_node *node, t_stack *stk)
 		stk->head->next = NULL;
 		stk->head->prev = NULL;
 	}
+	stk->size += 1;
+	return (1);
 }
 
 static void	ft_push(t_stack *dst, t_stack *src)
@@ -47,7 +49,8 @@ static void	ft_push(t_stack *dst, t_stack *src)
 	}
 	temp->next = NULL;
 	temp->prev = NULL;
-	ft_link(temp, dst);
+	if (ft_link(temp, dst))
+		src->size -= 1;
 }
 
 void	push(t_stack *dst, t_stack *src, char target)
