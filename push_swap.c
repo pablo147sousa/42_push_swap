@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:08:45 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/03 15:34:11 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/06 15:54:14 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_push_swap(t_stack *a)
 	b->tail = NULL;
 	b->size = 0;
 	// push_test(a, b);
+	// sort_test(a, b);
 	sort(a, b);
 	// rotate_test(a);
 	// sort_3(a, 'b');
@@ -46,7 +47,7 @@ int	main(int argc, char const *argv[])
 	a = ft_fill_stk(out, i);
 	if (!a)
 		return (-1);
-	ft_printf("size: %d\n",a->size);
+	// ft_printf("size: %d\n",a->size);
 	ft_push_swap(a);
 	ft_clean_stack(a);
 	return (0);

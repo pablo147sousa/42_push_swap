@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 12:36:47 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/03 15:26:31 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/06 15:17:54 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,29 @@ void	rotate_test(t_stack *a)
 	ft_printf("%d\n", temp->value);
 	ft_printf("----MOVES----\n");
 	sort_3(a, 'a');
+	temp = a->head;
+	ft_printf("----STACK----\n");
+	while (temp != a->tail)
+	{
+		ft_printf("%d\n", temp->value);
+		temp = temp->next;
+	}
+	ft_printf("%d\n", temp->value);
+}
+
+void	sort_test(t_stack *a, t_stack *b){
+	t_node *temp;
+
+	temp = a->head;
+	ft_printf("----STACK----\n");
+	while (temp != a->tail)
+	{
+		ft_printf("%d\n", temp->value);
+		temp = temp->next;
+	}
+	ft_printf("%d\n", temp->value);
+	ft_printf("----MOVES----\n");
+	sort(a, b);
 	temp = a->head;
 	ft_printf("----STACK----\n");
 	while (temp != a->tail)
