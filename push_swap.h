@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:41:36 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/06 15:17:35 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/08 16:13:46 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void		swap_ss(t_stack *stk_a, t_stack *stk_b);
 void		push(t_stack *dst, t_stack *src, char target);
 void		rot(t_stack *stk, int way, char target);
 void		rot_r(t_stack *stk_a, t_stack *stk_b, int way);
+void		rotate(t_stack *stk, int way);
 
 // HELPERS
 
@@ -71,5 +72,10 @@ void		sort(t_stack *a, t_stack *b);
 void		sort_2(t_stack *s, char target);
 void		sort_5(t_stack *a, t_stack *b);
 
+// FINDERS
+
+t_node		*is_min(t_stack *s);
+int			ft_rot(t_stack *s, t_node *node);
+int			r_rot(t_stack *s, t_node *node);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 15:49:44 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/06 16:16:29 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/08 16:14:38 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	sort_3(t_stack *s, char target)
 	if (s->head->value < mid->value && mid->value < s->tail->value)
 		return ;
 	if (s->head->value > mid->value && s->head->value < s->tail->value)
-		return swap(s, target);
+		return (swap(s, target));
 	if (s->head->value > mid->value && mid->value > s->tail->value)
 		return (swap(s, target), rot(s, -1, target));
 	if (s->head->value < s->tail->value && s->tail->value < mid->value)
@@ -36,23 +36,25 @@ void	sort_3(t_stack *s, char target)
 
 void	sort_5(t_stack *a, t_stack *b)
 {
-	t_node	*first;
+	int		i;
+	int		way;
+	t_node	*min;
 
-	push(b, a, 'b');
-	push(b, a, 'b');
-	sort_3(a, 'a');
-	sort_2(b, 'b');
-	if (b->head->value < a->head->value)
-		first = b->head;
-	else
-		first = a->head;
-	while (b->size != 0)
+	i = -1;
+	while (++i < 2)
 	{
-		if (b->head->value > a->head->prev->value
-			&& b->head->value < a->head->value)
-			push(a, b, 'a');
-		rot(a, 1, 'a');
+		min = is_min(a);
+		way = r_rot(a, min) - ft_rot(a, min);
+		while (min != a->head)
+		{
+			rot(a, way, 'a');
+		}
+		push(b, a, 'b');
 	}
-	while (first != a->head)
-		rot(a, 1, 'a');
+	if (a->size == 2)
+		sort_2(a, 'a');
+	else
+		sort_3(a, 'a');
+	push(a, b, 'a');
+	push(a, b, 'a');
 }

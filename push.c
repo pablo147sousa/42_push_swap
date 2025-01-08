@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push.c                                             :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:18:33 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/12/27 15:48:08 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/08 16:12:37 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	ft_push(t_stack *dst, t_stack *src)
 	t_node	*temp;
 
 	temp = src->head;
-	if (temp == src->tail)
+	if (src->size == 1)
 	{
 		src->head = NULL;
 		src->tail = NULL;
