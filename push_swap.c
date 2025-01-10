@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:08:45 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/08 15:48:32 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/09 14:11:07 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int	main(int argc, char const *argv[])
 		return (0);
 	// a = NULL;
 	out = ft_valid(argc, argv);
-	if (!out)
-		return (-1);
+	if (!out || !*out)
+		return (free(out), -1);
 	i = 0;
 	while (out[i])
 		i++;
