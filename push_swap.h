@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:41:36 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/08 16:13:46 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/10 17:02:02 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_node
 {
 	int				value;
 	size_t			moves;
+	ssize_t			id;
 	struct s_node	*next;
 	struct s_node	*prev;
 }	t_node;
@@ -58,6 +59,8 @@ void		rotate(t_stack *stk, int way);
 long		ft_atol(const char *nptr);
 int			ft_verify(int *array, char *str);
 void		ft_error(int *array);
+void		ft_quick(int arr[], int bottom, int up);
+
 
 // TESTERS
 
@@ -67,9 +70,10 @@ void		sort_test(t_stack *a, t_stack *b);
 
 // SORTING
 
-void		sort_3(t_stack *s, char target);
 void		sort(t_stack *a, t_stack *b);
 void		sort_2(t_stack *s, char target);
+void		sort_3(t_stack *s, char target);
+void		sort_4(t_stack *a, t_stack *b);
 void		sort_5(t_stack *a, t_stack *b);
 
 // FINDERS

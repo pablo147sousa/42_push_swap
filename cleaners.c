@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 14:39:32 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/09 14:29:05 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/10 17:01:50 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,23 +40,26 @@ void	ft_clean_stack(t_stack *stk)
 		stk->head = temp;
 		stk->size -= 1;
 	}
-	// free(stk->head);
 	free(stk);
 }
 
-// void	ft_clean_stack(t_stack *stk)
+// void	ft_clean_stack(t_stack **stk)
 // {
 // 	t_node	*temp;
 
-// 	if (!stk || !stk->head)
-// 		return (free(stk));
-// 	temp = stk->head;
-// 	while (stk->head != stk->tail)
+// 	if (!stk || !*stk || !(*stk)->head)
 // 	{
-// 		temp = stk->head->next;
-// 		free(stk->head);
-// 		stk->head = temp;
+// 		free(*stk);
+// 		*stk = NULL;
+// 		return ;
 // 	}
-// 	free(stk->head);
-// 	free(stk);
+// 	while ((*stk)->size != 0)
+// 	{
+// 		temp = (*stk)->head->next;
+// 		free((*stk)->head);
+// 		(*stk)->head = temp;
+// 		(*stk)->size -= 1;
+// 	}
+// 	free(*stk);
+// 	*stk = NULL;
 // }

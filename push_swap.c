@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:08:45 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/09 14:11:07 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/10 17:02:23 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int	main(int argc, char const *argv[])
 
 	if (argc <= 1)
 		return (0);
-	// a = NULL;
 	out = ft_valid(argc, argv);
 	if (!out || !*out)
 		return (free(out), -1);
@@ -45,9 +44,9 @@ int	main(int argc, char const *argv[])
 	while (out[i])
 		i++;
 	a = ft_fill_stk(out, i);
+	free(out);
 	if (!a)
 		return (-1);
-	// ft_printf("size: %d\n",a->size);
 	ft_push_swap(a);
 	ft_clean_stack(a);
 	return (0);

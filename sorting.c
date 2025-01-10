@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 15:49:44 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/08 16:14:38 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/10 16:48:59 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,22 @@ void	sort_3(t_stack *s, char target)
 	if (s->head->value < s->tail->value && s->tail->value < mid->value)
 		swap(s, target);
 	rot(s, (s->head->value - mid->value), target);
+}
+
+void	sort_4(t_stack *a, t_stack *b)
+{
+	int		way;
+	t_node	*min;
+
+	min = is_min(a);
+	way = r_rot(a, min) - ft_rot(a, min);
+	while (min != a->head)
+	{
+		rot(a, way, 'a');
+	}
+	push(b, a, 'b');
+	sort_3(a, 'a');
+	push(a, b, 'a');
 }
 
 void	sort_5(t_stack *a, t_stack *b)

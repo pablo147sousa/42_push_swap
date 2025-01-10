@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:47:04 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/03 09:32:09 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/10 15:18:13 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_node	*ft_newnode(int value)
 		return (NULL);
 	node->value = value;
 	node->moves = 0;
+	node->id = -1;
 	node->next = NULL;
 	node->prev = NULL;
 	return (node);
@@ -58,5 +59,5 @@ t_stack	*ft_fill_stk(int *src, int size)
 	}
 	stk->head->prev = stk->tail;
 	stk->tail->next = stk->head;
-	return (free(src), stk);
+	return (stk);
 }
