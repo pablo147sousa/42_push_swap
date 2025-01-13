@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:41:36 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/10 17:02:02 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:00:30 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 typedef struct s_node
 {
 	int				value;
+	int				id;
 	size_t			moves;
-	ssize_t			id;
 	struct s_node	*next;
 	struct s_node	*prev;
 }	t_node;
@@ -33,7 +33,7 @@ typedef struct s_stack
 	size_t	size;
 }	t_stack;
 
-void		ft_push_swap(t_stack *a);
+void		ft_push_swap(t_stack *a, int*array);
 int			*ft_valid(int ac, char const *av[]);
 t_node		*ft_newnode(int value);
 void		ft_add_front(t_stack *stack, t_node *new);
@@ -60,6 +60,8 @@ long		ft_atol(const char *nptr);
 int			ft_verify(int *array, char *str);
 void		ft_error(int *array);
 void		ft_quick(int arr[], int bottom, int up);
+void		ft_index(t_stack *a, int *src);
+
 
 
 // TESTERS
@@ -67,6 +69,8 @@ void		ft_quick(int arr[], int bottom, int up);
 void		push_test(t_stack *a, t_stack *b);
 void		rotate_test(t_stack *stk);
 void		sort_test(t_stack *a, t_stack *b);
+void		index_test(t_stack *a, int *src);
+
 
 // SORTING
 
