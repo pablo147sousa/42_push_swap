@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:08:45 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/13 16:01:12 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:20:46 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_push_swap(t_stack *a, int *array)
 {
 	t_stack	*b;
 
+	if (is_sorted(a))
+		return ;
 	b = malloc(sizeof(t_stack));
 	b->head = NULL;
 	b->tail = NULL;

@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 14:39:32 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/10 17:01:50 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:44:59 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ void	ft_clean_matrix(char **matrix)
 	}
 	free(matrix);
 }
-
-
 
 void	ft_clean_stack(t_stack *stk)
 {

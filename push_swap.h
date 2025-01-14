@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:41:36 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/13 16:00:30 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:39:37 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,7 @@ int			ft_verify(int *array, char *str);
 void		ft_error(int *array);
 void		ft_quick(int arr[], int bottom, int up);
 void		ft_index(t_stack *a, int *src);
-
-
+int			is_sorted(t_stack *s);
 
 // TESTERS
 
@@ -71,7 +70,6 @@ void		rotate_test(t_stack *stk);
 void		sort_test(t_stack *a, t_stack *b);
 void		index_test(t_stack *a, int *src);
 
-
 // SORTING
 
 void		sort(t_stack *a, t_stack *b);
@@ -79,6 +77,7 @@ void		sort_2(t_stack *s, char target);
 void		sort_3(t_stack *s, char target);
 void		sort_4(t_stack *a, t_stack *b);
 void		sort_5(t_stack *a, t_stack *b);
+void		big_sort(t_stack *a, t_stack *b);
 
 // FINDERS
 

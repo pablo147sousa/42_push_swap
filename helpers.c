@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 09:53:50 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/13 14:37:47 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:39:54 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,20 @@ void	ft_index(t_stack *a, int *src)
 		}
 		temp = temp->next;
 	}
+}
+
+int	is_sorted(t_stack *s)
+{
+	t_node	*temp;
+
+	temp = s->tail;
+	if (s->head->value > s->head->next->value)
+		return (0);
+	while (temp != s->head)
+	{
+		if (temp->value < temp->prev->value)
+			return (0);
+		temp = temp->prev;
+	}
+	return (1);
 }
