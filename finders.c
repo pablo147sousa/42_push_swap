@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 11:55:22 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/08 16:15:54 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/14 14:45:26 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,24 @@ t_node	*is_min(t_stack *s)
 	if (temp->value < min->value)
 		min = temp;
 	return (min);
+}
+
+t_node	*is_max(t_stack *s)
+{
+	t_node	*temp;
+	t_node	*max;
+
+	temp = s->head;
+	max = temp;
+	while (temp != s->tail)
+	{
+		if (temp->value > max->value)
+			max = temp;
+		temp = temp->next;
+	}
+	if (temp->value > max->value)
+		max = temp;
+	return (max);
 }
 
 int	ft_rot(t_stack *s, t_node *node)

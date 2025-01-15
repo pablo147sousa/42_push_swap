@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:41:36 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/14 13:39:37 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/15 16:06:29 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_node
 	size_t			moves;
 	struct s_node	*next;
 	struct s_node	*prev;
+	struct s_node	*target;
 }	t_node;
 
 typedef struct s_stack
@@ -34,10 +35,9 @@ typedef struct s_stack
 }	t_stack;
 
 void		ft_push_swap(t_stack *a, int*array);
-int			*ft_valid(int ac, char const *av[]);
+int			*ft_valid(int ac, char const *av[], int *size);
 t_node		*ft_newnode(int value);
 void		ft_add_front(t_stack *stack, t_node *new);
-t_stack		*ft_init_stk(t_node *node);
 t_stack		*ft_fill_stk(int *src, int size);
 
 // CLEANERS
@@ -68,6 +68,7 @@ int			is_sorted(t_stack *s);
 void		push_test(t_stack *a, t_stack *b);
 void		rotate_test(t_stack *stk);
 void		sort_test(t_stack *a, t_stack *b);
+void		target_test(t_stack *a, t_stack *b);
 void		index_test(t_stack *a, int *src);
 
 // SORTING
@@ -82,7 +83,12 @@ void		big_sort(t_stack *a, t_stack *b);
 // FINDERS
 
 t_node		*is_min(t_stack *s);
+t_node		*is_max(t_stack *s);
 int			ft_rot(t_stack *s, t_node *node);
 int			r_rot(t_stack *s, t_node *node);
+
+// PROCESSORS
+
+void		set_a(t_stack *a, t_stack *b);
 
 #endif

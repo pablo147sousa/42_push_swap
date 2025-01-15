@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 15:36:22 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/06 11:15:37 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/15 16:26:01 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,18 @@ static int	ft_input(const char *str)
 	return (1);
 }
 
-static int	*ft_parse_str(char const *av[])
+static int	*ft_parse_str(char const *av[], int *size)
 {
 	char	**matrix;
 	int		*array;
 	int		i;
 
-	i = 0;
 	matrix = ft_split(av[1], 32);
 	if (!matrix)
 		return (0);
-	while (matrix[i])
-		i++;
-	array = malloc((i + 1) * sizeof(int));
+	while (matrix[*size])
+		*size += 1;
+	array = malloc((*size) * sizeof(int));
 	if (!array)
 		return (0);
 	i = 0;
@@ -53,16 +52,15 @@ static int	*ft_parse_str(char const *av[])
 		}
 		i++;
 	}
-	array[i] = 0;
 	return (ft_clean_matrix(matrix), array);
 }
 
-static int	*ft_parse_args(int ac, char const *av[])
+static int	*ft_parse_args(int ac, char const *av[], int *size)
 {
 	int	*array;
 	int	i;
 
-	array = malloc(ac * sizeof(int));
+	array = malloc((ac - 1) * sizeof(int));
 	if (!array)
 		return (0);
 	i = 0;
@@ -73,11 +71,11 @@ static int	*ft_parse_args(int ac, char const *av[])
 		i++;
 		av++;
 	}
-	array[i] = 0;
+	*size = ac - 1;
 	return (array);
 }
 
-static int	ft_invalid(int *args)
+static int	ft_invalid(int *args, int size)
 {
 	int	j;
 	int	i;
@@ -85,10 +83,10 @@ static int	ft_invalid(int *args)
 	i = 0;
 	if (!args)
 		return (1);
-	while (args[i])
+	while (i < size)
 	{
 		j = i + 1;
-		while (args[j])
+		while (j < size)
 		{
 			if (args[i] == args[j])
 				return (1);
@@ -99,16 +97,16 @@ static int	ft_invalid(int *args)
 	return (0);
 }
 
-int	*ft_valid(int ac, char const *av[])
+int	*ft_valid(int ac, char const *av[], int *size)
 {
 	int	*array;
 
 	array = NULL;
 	if (ac == 2)
-		array = ft_parse_str(av);
+		array = ft_parse_str(av, size);
 	else
-		array = ft_parse_args(ac, &av[1]);
-	if (ft_invalid(array))
+		array = ft_parse_args(ac, &av[1], size);
+	if (ft_invalid(array, *size))
 		return (ft_error(array), NULL);
 	return (array);
 }

@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 10:47:04 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/10 15:18:13 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/14 14:59:21 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_node	*ft_newnode(int value)
 	node->value = value;
 	node->moves = 0;
 	node->id = -1;
+	node->target = NULL;
 	node->next = NULL;
 	node->prev = NULL;
 	return (node);
