@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:08:45 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/15 16:30:17 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/15 16:43:48 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void	ft_push_swap(t_stack *a, int *array)
 	b->tail = NULL;
 	b->size = 0;
 	ft_index(a, array);
-	sort_test(a, b);
+	// sort_test(a, b);
 	// sort(a, b);
-	// target_test(a, b);
+	target_test(a, b);
 	ft_clean_stack(b);
 }
 

@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:53:29 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/15 15:50:52 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/15 16:55:26 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_set(t_node *a, t_node *b, t_node **target, long *best_id)
 {
-	if (b->id < a->id && b->id > *best_id)
+	if (b->value < a->value && b->value > *best_id)
 	{
-		*best_id = b->id;
+		*best_id = b->value;
 		*target = b;
 	}
 }
@@ -52,7 +52,6 @@ void	set_a(t_stack *a, t_stack *b)
 
 // void	set_b(t_stack *a, t_stack *b)
 // {
-	
 // }
 
 void	big_sort(t_stack *a, t_stack *b)
