@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 09:53:50 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/14 13:39:54 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/17 16:30:54 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,23 +58,22 @@ void	ft_error(int *array)
 	write(2, "Error\n", 7);
 }
 
-void	ft_index(t_stack *a, int *src)
+void	ft_index(t_stack *s)
 {
-	t_node	*temp;
 	int		i;
-	int		j;
+	t_node	*temp;
 
-	temp = a->head;
-	i = a->size;
-	while (--i >= 0)
+	i = 0;
+	temp = s->head;
+	while (i < s->size)
 	{
-		j = -1;
-		while (src[++j])
-		{
-			if (temp->value == src[j])
-				temp->id = j;
-		}
+		temp->id = i;
+		if (i > ((s->size)/2))
+			temp->rev = true;
+		else
+			temp->rev = false;
 		temp = temp->next;
+		i++;
 	}
 }
 

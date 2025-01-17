@@ -6,11 +6,26 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 15:32:24 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/14 13:37:59 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/17 17:01:08 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	update_a(t_stack *a, t_stack *b)
+{
+	ft_index(a);
+	ft_index(b);
+	set_a(a, b);
+	cost_a(a, b);
+}
+
+void	big_sort(t_stack *a, t_stack *b)
+{
+	ft_printf("%d\n", a->head->value);
+	ft_printf("%d\n", b->head->value);
+	return ;
+}
 
 void	sort(t_stack *a, t_stack *b)
 {

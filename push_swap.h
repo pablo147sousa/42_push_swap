@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:41:36 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/15 16:06:29 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/17 16:59:33 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,15 @@
 # include <stdlib.h>
 # include "libft/libft.h"
 # include <limits.h>
+# include <stdbool.h>
 
 typedef struct s_node
 {
 	int				value;
 	int				id;
-	size_t			moves;
+	int				moves;
+	bool			rev;
+	bool			best;
 	struct s_node	*next;
 	struct s_node	*prev;
 	struct s_node	*target;
@@ -31,10 +34,10 @@ typedef struct s_stack
 {
 	t_node	*head;
 	t_node	*tail;
-	size_t	size;
+	int		size;
 }	t_stack;
 
-void		ft_push_swap(t_stack *a, int*array);
+void		ft_push_swap(t_stack *a);
 int			*ft_valid(int ac, char const *av[], int *size);
 t_node		*ft_newnode(int value);
 void		ft_add_front(t_stack *stack, t_node *new);
@@ -52,16 +55,14 @@ void		swap_ss(t_stack *stk_a, t_stack *stk_b);
 void		push(t_stack *dst, t_stack *src, char target);
 void		rot(t_stack *stk, int way, char target);
 void		rot_r(t_stack *stk_a, t_stack *stk_b, int way);
-void		rotate(t_stack *stk, int way);
 
 // HELPERS
 
 long		ft_atol(const char *nptr);
 int			ft_verify(int *array, char *str);
 void		ft_error(int *array);
-void		ft_quick(int arr[], int bottom, int up);
-void		ft_index(t_stack *a, int *src);
 int			is_sorted(t_stack *s);
+void		ft_index(t_stack *s);
 
 // TESTERS
 
@@ -69,7 +70,7 @@ void		push_test(t_stack *a, t_stack *b);
 void		rotate_test(t_stack *stk);
 void		sort_test(t_stack *a, t_stack *b);
 void		target_test(t_stack *a, t_stack *b);
-void		index_test(t_stack *a, int *src);
+void		index_test(t_stack *a);
 
 // SORTING
 
@@ -90,5 +91,6 @@ int			r_rot(t_stack *s, t_node *node);
 // PROCESSORS
 
 void		set_a(t_stack *a, t_stack *b);
+void		cost_a(t_stack *a, t_stack *b);
 
 #endif

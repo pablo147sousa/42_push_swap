@@ -4,7 +4,7 @@ NAME = push_swap
 MAIN    =   push_swap.c
 SOURCES =	sorting.c cleaners.c ft_nodes.c helpers.c parse.c \
 			swap.c push.c rotate.c testers.c sort_main.c finders.c \
-			quick.c big_sort.c
+			update_a.c
 
 SRCS_DIR = .
 SRCS = $(addprefix $(SRCS_DIR)/, $(SOURCES))

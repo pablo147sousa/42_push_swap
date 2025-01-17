@@ -6,13 +6,13 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 14:14:30 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/08 11:52:07 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/17 16:59:57 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate(t_stack *stk, int way)
+static void	rotate(t_stack *stk, int way)
 {
 	if (way < 0)
 	{

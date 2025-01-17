@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 12:36:47 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/15 16:52:46 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/17 15:51:55 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,8 +153,6 @@ void	target_test(t_stack *a, t_stack *b)
 	ft_printf("%d\n", temp->value);
 	ft_printf("----MOVES----\n");
 	push(b, a, 'b');
-	push(b, a, 'b');
-	push(b, a, 'b');
 	set_a(a, b);
 	temp = a->head;
 	ft_printf("----STACK----\n");
@@ -166,7 +164,7 @@ void	target_test(t_stack *a, t_stack *b)
 		ft_printf("%d->%d\n", temp->value, temp->target->value);
 }
 
-void	index_test(t_stack *a, int *src)
+void	index_test(t_stack *a)
 {
 	t_node *temp;
 
@@ -179,7 +177,8 @@ void	index_test(t_stack *a, int *src)
 	}
 	ft_printf("%d\n", temp->id);
 	ft_printf("----MOVES----\n");
-	ft_index(a, src);
+
+	ft_index(a);
 	temp = a->head;
 	ft_printf("----STACK----\n");
 	while (temp != a->tail)

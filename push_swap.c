@@ -6,14 +6,14 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:08:45 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/15 16:43:48 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/17 17:00:36 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-void	ft_push_swap(t_stack *a, int *array)
+void	ft_push_swap(t_stack *a)
 {
 	t_stack	*b;
 
@@ -23,10 +23,9 @@ void	ft_push_swap(t_stack *a, int *array)
 	b->head = NULL;
 	b->tail = NULL;
 	b->size = 0;
-	ft_index(a, array);
-	// sort_test(a, b);
-	// sort(a, b);
-	target_test(a, b);
+	// index_test(a);
+	sort(a, b);
+	// target_test(a, b);
 	ft_clean_stack(b);
 }
 
@@ -45,8 +44,8 @@ int	main(int argc, char const *argv[])
 	a = ft_fill_stk(out, size);
 	if (!a)
 		return (-1);
-	ft_quick(out, 0, size - 1);
-	ft_push_swap(a, out);
+	// ft_quick(out, 0, size - 1);
+	ft_push_swap(a);
 	free(out);
 	ft_clean_stack(a);
 	return (0);

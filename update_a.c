@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   big_sort.c                                         :+:      :+:    :+:   */
+/*   update_a.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:53:29 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/15 16:55:26 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/17 16:55:14 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_set(t_node *a, t_node *b, t_node **target, long *best_id)
+void	ft_set_a(t_node *a, t_node *b, t_node **target, long *best_id)
 {
 	if (b->value < a->value && b->value > *best_id)
 	{
@@ -35,7 +35,7 @@ void	set_a(t_stack *a, t_stack *b)
 		temp_b = b->head;
 		while (1)
 		{
-			ft_set(temp_a, temp_b, &target, &best_id);
+			ft_set_a(temp_a, temp_b, &target, &best_id);
 			if (temp_b == b->tail)
 				break ;
 			temp_b = temp_b->next;
@@ -50,13 +50,23 @@ void	set_a(t_stack *a, t_stack *b)
 	}
 }
 
-// void	set_b(t_stack *a, t_stack *b)
-// {
-// }
-
-void	big_sort(t_stack *a, t_stack *b)
+void	cost_a(t_stack *a, t_stack *b)
 {
-	ft_printf("%d\n", a->head->value);
-	ft_printf("%d\n", b->head->value);
-	return ;
+	t_node	*temp;
+
+	temp = a->head;
+	while (1)
+	{
+		temp->moves = temp->id;
+		if (temp->rev)
+			temp->moves = a->size - temp->id;
+		if (temp->target->rev)
+			temp->moves += b->size - temp->target->id;
+		else
+			temp->moves += temp->target->id;
+		if (temp == a->tail)
+			break;
+		temp = temp->next;
+	}
 }
+
