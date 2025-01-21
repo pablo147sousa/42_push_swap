@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:41:36 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/17 16:59:33 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/20 16:40:20 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,13 @@ int			r_rot(t_stack *s, t_node *node);
 
 // PROCESSORS
 
-void		set_a(t_stack *a, t_stack *b);
-void		cost_a(t_stack *a, t_stack *b);
+void		update_a(t_stack *a, t_stack *b);
+void		move_a(t_stack *a, t_stack *b);
+void		update_b(t_stack *a, t_stack *b);
+void		move_b(t_stack *a, t_stack *b);
+void		ft_cheap(t_stack *s);
+t_node		*get_cheap(t_stack *s);
+void		rot_both(t_stack *a, t_stack *b, t_node *node, int way);
+void		set_head(t_stack *s, t_node *node, char target);
 
 #endif

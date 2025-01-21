@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 09:53:50 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/17 16:30:54 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/21 17:19:46 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	ft_index(t_stack *s)
 	while (i < s->size)
 	{
 		temp->id = i;
-		if (i > ((s->size)/2))
+		if (i > ((s->size) / 2))
 			temp->rev = true;
 		else
 			temp->rev = false;

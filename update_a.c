@@ -6,13 +6,13 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:53:29 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/17 16:55:14 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/21 17:20:08 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_set_a(t_node *a, t_node *b, t_node **target, long *best_id)
+static void	ft_set_a(t_node *a, t_node *b, t_node **target, long *best_id)
 {
 	if (b->value < a->value && b->value > *best_id)
 	{
@@ -21,7 +21,7 @@ void	ft_set_a(t_node *a, t_node *b, t_node **target, long *best_id)
 	}
 }
 
-void	set_a(t_stack *a, t_stack *b)
+static void	set_a(t_stack *a, t_stack *b)
 {
 	t_node	*temp_a;
 	t_node	*temp_b;
@@ -50,7 +50,7 @@ void	set_a(t_stack *a, t_stack *b)
 	}
 }
 
-void	cost_a(t_stack *a, t_stack *b)
+static void	cost_a(t_stack *a, t_stack *b)
 {
 	t_node	*temp;
 
@@ -65,8 +65,31 @@ void	cost_a(t_stack *a, t_stack *b)
 		else
 			temp->moves += temp->target->id;
 		if (temp == a->tail)
-			break;
+			break ;
 		temp = temp->next;
 	}
 }
 
+void	move_a(t_stack *a, t_stack *b)
+{
+	t_node	*node;
+
+	node = get_cheap(a);
+	if (node->rev && node->target->rev)
+		rot_both(a, b, node, -1);
+	else if (!(node->rev) && !(node->target->rev))
+		rot_both(a, b, node, 1);
+	set_head(a, node, 'a');
+	set_head(b, node->target, 'b');
+	node->best = false;
+	push(b, a, 'b');
+}
+
+void	update_a(t_stack *a, t_stack *b)
+{
+	ft_index(a);
+	ft_index(b);
+	set_a(a, b);
+	cost_a(a, b);
+	ft_cheap(a);
+}

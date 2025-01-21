@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 12:36:47 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/17 15:51:55 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/20 16:38:16 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,7 +153,6 @@ void	target_test(t_stack *a, t_stack *b)
 	ft_printf("%d\n", temp->value);
 	ft_printf("----MOVES----\n");
 	push(b, a, 'b');
-	set_a(a, b);
 	temp = a->head;
 	ft_printf("----STACK----\n");
 	while (temp != a->tail)
