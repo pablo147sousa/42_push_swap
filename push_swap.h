@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:41:36 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/20 16:40:20 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/22 14:48:33 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,7 @@ void		ft_index(t_stack *s);
 
 // TESTERS
 
-void		push_test(t_stack *a, t_stack *b);
-void		rotate_test(t_stack *stk);
 void		sort_test(t_stack *a, t_stack *b);
-void		target_test(t_stack *a, t_stack *b);
-void		index_test(t_stack *a);
 
 // SORTING
 
