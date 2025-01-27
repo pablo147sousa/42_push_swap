@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 15:36:22 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/15 16:26:01 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/01/27 11:55:16 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static int	ft_input(const char *str)
 	const char	*temp;
 
 	temp = str;
+	if (!*temp)
+		return (0);
 	if (*str == '+' || *str == '-')
 		temp++;
 	while (*temp)
