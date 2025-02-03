@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 15:36:22 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/27 11:55:16 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/02/03 11:39:14 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	ft_input(const char *str)
 	while (*temp)
 	{
 		if (!ft_isdigit(*temp))
-			return (0);
+			return (ft_error(), 0);
 		temp++;
 	}
 	return (1);
@@ -37,8 +37,8 @@ static int	*ft_parse_str(char const *av[], int *size)
 	int		i;
 
 	matrix = ft_split(av[1], 32);
-	if (!matrix)
-		return (0);
+	if (!matrix || !*matrix)
+		return (ft_clean_matrix(matrix), (int *)0);
 	while (matrix[*size])
 		*size += 1;
 	array = malloc((*size) * sizeof(int));
@@ -47,7 +47,7 @@ static int	*ft_parse_str(char const *av[], int *size)
 	i = 0;
 	while (matrix[i])
 	{
-		if (!ft_input(matrix[i]) || !ft_verify(&array[i], matrix[i]))
+		if (!ft_input(matrix[i]) || !ft_add(&array[i], matrix[i]))
 		{
 			ft_clean_matrix(matrix);
 			return (free(array), NULL);
@@ -68,7 +68,7 @@ static int	*ft_parse_args(int ac, char const *av[], int *size)
 	i = 0;
 	while (*av)
 	{
-		if (!ft_input(*av) || !ft_verify(&array[i], (char *) *av))
+		if (!ft_input(*av) || !ft_add(&array[i], (char *) *av))
 			return (free(array), NULL);
 		i++;
 		av++;
@@ -91,7 +91,7 @@ static int	ft_invalid(int *args, int size)
 		while (j < size)
 		{
 			if (args[i] == args[j])
-				return (1);
+				return (ft_error(), 1);
 			j++;
 		}
 		i++;
@@ -109,6 +109,6 @@ int	*ft_valid(int ac, char const *av[], int *size)
 	else
 		array = ft_parse_args(ac, &av[1], size);
 	if (ft_invalid(array, *size))
-		return (ft_error(array), NULL);
+		return (NULL);
 	return (array);
 }
