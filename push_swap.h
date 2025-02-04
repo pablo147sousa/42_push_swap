@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:41:36 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/02/03 11:38:41 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/02/04 09:58:36 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void		rot_r(t_stack *stk_a, t_stack *stk_b, int way);
 
 long		ft_atol(const char *nptr);
 int			ft_add(int *array, char *str);
-void		ft_error(void);
+void		ft_error(int *array);
 int			is_sorted(t_stack *s);
 void		ft_index(t_stack *s);
 

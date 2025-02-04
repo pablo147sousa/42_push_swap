@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 09:53:50 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/02/03 11:38:52 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/02/04 10:00:12 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,14 @@ int	ft_add(int *array, char *str)
 
 	nbr = ft_atol(str);
 	if (nbr < INT_MIN || nbr > INT_MAX)
-		return (ft_error(), 0);
+		return (0);
 	*array = (int) nbr;
 	return (1);
 }
 
-void	ft_error(void)
+void	ft_error(int *array)
 {
+	free(array);
 	write(2, "Error\n", 7);
 }
 
