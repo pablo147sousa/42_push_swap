@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 09:53:50 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/02/04 10:00:12 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/02/05 16:12:46 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	ft_add(int *array, char *str)
 void	ft_error(int *array)
 {
 	free(array);
-	write(2, "Error\n", 7);
+	write(2, "Error\n", 6);
 }
 
 void	ft_index(t_stack *s)

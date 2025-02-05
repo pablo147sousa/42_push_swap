@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:08:45 by pmoreira          #+#    #+#             */
-/*   Updated: 2025/01/21 17:18:42 by pmoreira         ###   ########.fr       */
+/*   Updated: 2025/02/05 16:18:59 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char const *argv[])
 		return (0);
 	size = 0;
 	out = ft_valid(argc, argv, &size);
-	if (!out || !*out)
+	if (!out)
 		return (free(out), -1);
 	a = ft_fill_stk(out, size);
 	if (!a)
